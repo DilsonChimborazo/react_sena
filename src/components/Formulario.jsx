@@ -6,7 +6,7 @@ const Formulario=()=>{
     const[correo,setcorreo]=useState('')
 
     const enviarDatos=(e)=>{
-        e.preventDefault()
+
 
     const datosformulario={
         nombre:nombre,
@@ -14,6 +14,7 @@ const Formulario=()=>{
     }
     const datos=JSON.stringify(datosformulario)
     localStorage.setItem('datosformulario',datos)
+    setnombre('')
     }
 
 
@@ -31,12 +32,12 @@ const Formulario=()=>{
 
 
                     <button type="submit" className="btn btn-primary mt-4">Enviar</button>
+                </form>
                     <button onClick={()=>{const date=JSON.parse(localStorage.getItem('datosformulario'))
                         setnombre(date.nombre)
                         setcorreo(date.correo)
                     }} 
-                    className="btn btn-warning mt-4 mx-2">Editar</button>    
-                </form>
+                    className="btn btn-success mt-4 mx-2">Editar</button>    
             </div>
             <div>
               <p></p>  
